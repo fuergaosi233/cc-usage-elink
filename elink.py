@@ -204,7 +204,7 @@ async def _try_direct_connect(address: str, attempts: int = 3) -> BleakClient | 
     return None
 
 
-async def find_and_connect(address: str | None, scan_timeout: float = 30.0) -> BleakClient:
+async def find_and_connect(address: str | None, scan_timeout: float = 60.0) -> BleakClient:
     # ── 快速路径：有地址先直连，无需等广播 ──────────────────────────
     if address:
         with console.status(f"[bold]直连 [cyan]{address}[/cyan]...[/bold]"):
@@ -254,8 +254,8 @@ async def find_and_connect(address: str | None, scan_timeout: float = 30.0) -> B
             await scanner.stop()
             return client
         except Exception as e:
-            console.print(f"  [yellow]连接失败 (第{attempt+1}次): {e}，等5s重试...[/yellow]")
-            await asyncio.sleep(5.0)
+            console.print(f"  [yellow]连接失败 (第{attempt+1}次): {e}，等2s重试...[/yellow]")
+            await asyncio.sleep(2.0)
 
     await scanner.stop()
     raise RuntimeError("连接失败，已重试5次")
