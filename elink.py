@@ -706,7 +706,7 @@ def push(address: str | None, out: str, dry_run: bool):
 
 @cli.command()
 @click.argument("address", required=False)
-@click.option("--interval", "-i", default=30, show_default=True, help="刷新间隔（分钟）")
+@click.option("--interval", "-i", default=5, show_default=True, help="刷新间隔（分钟）")
 @click.option("--out", default="/tmp/usage_display.png", show_default=True, help="图片缓存路径")
 def watch(address: str | None, interval: int, out: str):
     """后台模式：定时推送用量到墨水屏（Ctrl+C 退出）"""

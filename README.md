@@ -58,7 +58,7 @@ After setup:
 
 ```bash
 uv run elink.py push          # push usage to screen once
-uv run elink.py watch         # background mode, refresh every 30 min
+uv run elink.py watch         # background mode, refresh every 5 min
 uv run elink.py watch -i 15   # refresh every 15 min
 ```
 

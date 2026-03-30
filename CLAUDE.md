@@ -63,7 +63,7 @@ uv run elink.py setup
 # 日常使用
 uv run elink.py push              # 一条龙：拉数据 → 生成图 → 发送
 uv run elink.py push --dry-run    # 只生成图片，不发送
-uv run elink.py watch             # 后台模式，每30分钟自动推送
+uv run elink.py watch             # 后台模式，每5分钟自动推送
 uv run elink.py watch -i 15       # 每15分钟推送
 
 # 设备管理
